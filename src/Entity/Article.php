@@ -27,7 +27,7 @@ class Article
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\categorie")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;

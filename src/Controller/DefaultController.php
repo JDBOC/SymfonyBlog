@@ -2,16 +2,16 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController 
 {
    /**
-     * @Route("/", name="app_index")
+     * @Route("/default", name="app_index")
     */
-    public function index()
-    {
-        return $this->render('blog/default.html.twig', [ 'owner' => 'JeDi' ]);
-    }
+   public function index()
+   {
+       return $this->render('blog/default.html.twig');
+   }
 }
