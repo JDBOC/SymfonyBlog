@@ -72,12 +72,12 @@ public function index(): Response
              'blog/index.html.twig',
              ['articles' => $articles]
      );
-}
+    }
 
 /**
  * Show all row from article's entity
- * 
- * @Route("category/{categorieName}", 
+ *
+ * @Route("category/{categorieName}",
  * defaults={"categorieName" = "javascript"},
  * name="show_category")
  * @return Response A response instance
@@ -86,8 +86,8 @@ public function index(): Response
 public function showByCategory(string $categorieName)
 {
     $categorie = $this->getDoctrine()
-    ->getRepository(Categorie::class)
-    ->findOneBy(['name' => $categorieName]);
+                        ->getRepository(Categorie::class)
+->findOneBy(['name' => $categorieName]);
 
     $articles = $this->getDoctrine()
     ->getRepository(Article::class)
