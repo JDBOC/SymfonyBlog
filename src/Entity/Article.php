@@ -27,7 +27,7 @@ class Article
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
@@ -72,4 +72,6 @@ class Article
 
         return $this;
     }
+
+
 }
