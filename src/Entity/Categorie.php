@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategorieRepository")
@@ -23,7 +24,7 @@ class Categorie
     private $name;
 
       /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="Categorie")
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="categorie")
      */
     private $articles;
 
@@ -53,7 +54,7 @@ class Categorie
     /**
      * @return Collection|Article[]
      */
-    public function getArticles(): ArrayCollection
+    public function getArticles()
     {
         return $this->articles;
     }

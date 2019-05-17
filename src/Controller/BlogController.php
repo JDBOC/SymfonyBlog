@@ -106,7 +106,7 @@ class BlogController extends AbstractController
      * Show all row from article's entity
      *
      * @Route("category/{categorieName}",
-     * defaults={"categorieName" = "javascript"},
+     * defaults={"categorieName" = "Javascript"},
      * name="show_categorie")
      * @return Response A response instance
      */
@@ -120,7 +120,8 @@ class BlogController extends AbstractController
         return $this->render(
             'blog/category.html.twig',
             [
-                'categorie' => $articles
+                'articles' => $articles,
+                'categorie' => $categorieName
             ]
         );
     }
