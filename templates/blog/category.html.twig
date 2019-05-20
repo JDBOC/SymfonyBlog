@@ -5,7 +5,7 @@
 
 {% block body %}
     <h1>All articles from article s table : </h1>
-    {% for article in articles %}
+    {% for article in article %}
         <div>
             <h2>{{ article.id }} / {{ article.title }} - Category : {{ article.categorie.name }}</h2>
             <p>{{ article.content }}</p>

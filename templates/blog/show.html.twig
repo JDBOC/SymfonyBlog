@@ -12,6 +12,9 @@
     <p>{{ article.content }}</p>
 </div>
 
+
+  <a href="{{ path('article_show', {'id': article.id }) }}">{{article.title}}></a>
+
 <a href="{{ path('app_index') }}">
     Back to homepage.
 </a>
