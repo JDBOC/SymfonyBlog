@@ -134,7 +134,7 @@ class BlogController extends AbstractController
    //     );
    // }
 	/**
-	 * @Route("/category/{name}", name="article_show")
+	 * @Route("/category/{name}", name="articles_show")
 	 */
 	public function showByCategory(categorie $categorie): Response
 	{
