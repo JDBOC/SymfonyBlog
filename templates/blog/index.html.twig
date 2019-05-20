@@ -3,6 +3,7 @@
 
 {% block title %}All articles{% endblock %}
 
+
 {% block body %}
     <h1>All articles from article s table : </h1>
     {% for article in articles %}
@@ -13,6 +14,10 @@
     {% else %}
         Aucun article trouvé.
     {% endfor %}
+
+<br>
+
+
     <a href="{{ path('app_index') }}">
       Back to homepage.
     </a>

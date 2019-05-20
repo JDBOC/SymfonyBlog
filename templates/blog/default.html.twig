@@ -9,8 +9,12 @@
     Testing index() method from BlogController to view all articles.
 </a>
 <br>
-<a href="{{ path('article_show', { 'name' : 'Javascript' }) }}">
+<a href="{{ path('article_show', { 'name' : "Javascript" }) }}">
+
+
   
     Testing index() method from BlogController to view all articles from categorie Javascript.
 </a>
+  <br>
+  <a href="{{ path('add_category') }}">Ajouter une catégorie</a>
 {% endblock %}
