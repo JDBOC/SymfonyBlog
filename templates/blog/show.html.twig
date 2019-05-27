@@ -13,6 +13,23 @@
 </div>
 
 
+
+
+
+
+  <strong>Tags :</strong>
+  <ul>
+    {% for tag in article.tags %}
+      <li>{{ tag.name }} </li>
+    {% else %}
+      <li>No tags for this article</li>
+    {% endfor %}
+  </ul>
+
+
+
+
+
   <a href="{{ path('articles_show', {'name': article.categorie.name }) }}">{{article.categorie.name}}</a>
 
 

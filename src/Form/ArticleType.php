@@ -15,6 +15,7 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('categorie', null, ['choice_label'=> 'name'])
+	          ->add('tags', null, ['choice_label' => 'name'])
         ;
     }
 
