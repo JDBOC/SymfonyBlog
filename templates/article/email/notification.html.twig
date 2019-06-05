@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+
+  <p><strong>Nouvel Article disponible</strong></p>
+  <p> {{ article.title }} <a href="{{ url('article_show', {'id': article.id}) }}">lien</a> </p>
+
+{% endblock %}
