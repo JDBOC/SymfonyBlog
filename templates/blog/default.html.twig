@@ -1,20 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
-    Testing show() method from BlogController with a real article s slug.
+<a href="{{ path('blog_show', { 'slug': "memetata" }) }}">
+Testing show() method from BlogController with a real article s slug.
 </a>
 <br>
 <a href="{{ path('blog_index') }}">
-  
-    Testing index() method from BlogController to view all articles.
+
+Testing index() method from BlogController to view all articles.
 </a>
 <br>
 <a href="{{ path('articles_show', { 'name' : "Javascript" }) }}">
 
 
-  
-    Testing index() method from BlogController to view all articles from categorie Javascript.
+
+Testing index() method from BlogController to view all articles from categorie Javascript.
 </a>
-  <br>
-  <a href="{{ path('add_category') }}">Ajouter une catégorie</a>
+<br>
+<br>
+<a href="{{ path('add_category') }}">Ajouter une catégorie</a>
+<br>
+<br>
+<a href="{{ path('article_new') }}">Ajouter un article</a>
 {% endblock %}

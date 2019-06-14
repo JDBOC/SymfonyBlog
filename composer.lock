@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0640b75c464f301c8eb573040a7c6462",
+    "content-hash": "d3f082d536409afe2239e3602c9e374c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4153,7 +4153,7 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v4.2.8",
+            "version": "v4.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",

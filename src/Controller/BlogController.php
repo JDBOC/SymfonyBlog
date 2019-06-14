@@ -61,7 +61,7 @@ class BlogController extends AbstractController
 	/**
 	 * Show all row from article's entity
 	 *
-	 * @Route("/", name="blog_index")
+	 * @Route("/default", name="blog_index")
 	 * @return Response A response instance
 	 */
 	public function index(): Response
@@ -80,8 +80,32 @@ class BlogController extends AbstractController
 			'blog/index.html.twig', [
 				'articles' => $articles
 				
-			]
-		);
+			]);
+  }
+  /**
+   * Show all row from article's entity
+   *
+   * @Route("/", name="blog_accueil")
+   * @return Response A response instance
+   */
+    public function indexGen(): Response
+  {
+    $articles = $this->getDoctrine()
+      ->getRepository(Article::class)
+      ->findAll();
+
+    if (!$articles) {
+      throw $this->createNotFoundException(
+        'No article found in article\'s table.'
+      );
+
+    }
+    return $this->render(
+      'blog/default.html.twig', [
+        'articles' => $articles
+
+      ]
+    );
 		}
 	
 
