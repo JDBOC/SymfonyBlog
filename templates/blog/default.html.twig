@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+
 <a href="{{ path('blog_show', { 'slug': "mlle" }) }}">
 Testing show() method from BlogController with a real article s slug.
 </a>
@@ -10,9 +11,6 @@ Testing index() method from BlogController to view all articles.
 </a>
 <br>
 <a href="{{ path('articles_show', { 'name' : "Javascript" }) }}">
-
-
-
 Testing index() method from BlogController to view all articles from categorie Javascript.
 </a>
 <br>
@@ -21,4 +19,13 @@ Testing index() method from BlogController to view all articles from categorie J
 <br>
 <br>
 <a href="{{ path('article_new') }}">Ajouter un article</a>
+  <br>
+  <br>
+  {% if app.user %}
+    Bonjour {{ app.user.email }} !
+    <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+  {% else %}
+    <a href="{{ path('app_login') }}"> Se connecter</a>
+  {% endif %}
+
 {% endblock %}

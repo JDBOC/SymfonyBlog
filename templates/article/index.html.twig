@@ -20,6 +20,11 @@
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
+              {% if article.author %}
+                <td>{{ article.author.id }}</td>
+              {% endif %}
+
+
                 <td>
                   <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
