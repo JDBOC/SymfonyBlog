@@ -33,11 +33,11 @@ class BlogController extends AbstractController
 				->createNotFoundException('No slug has been sent to find an article in article\'s table.');
 		}
 		
-		$slug = preg_replace(
-			'/-/',
-			' ',
-			ucwords(trim(strip_tags($slug)), "-")
-		);
+		    $slug = preg_replace(
+			    '/-/',
+			    ' ',
+			    ucwords(trim(strip_tags($slug)), "-")
+		      );
 		
 		$article = $this->getDoctrine()
 			->getRepository(Article::class)
@@ -90,21 +90,10 @@ class BlogController extends AbstractController
    */
     public function indexGen(): Response
   {
-    $articles = $this->getDoctrine()
-      ->getRepository(Article::class)
-      ->findAll();
 
-    if (!$articles) {
-      throw $this->createNotFoundException(
-        'No article found in article\'s table.'
-      );
 
-    }
     return $this->render(
-      'blog/default.html.twig', [
-        'articles' => $articles
-
-      ]
+      'blog/default.html.twig'
     );
 		}
 	
