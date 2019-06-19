@@ -27,7 +27,10 @@
 
                 <td>
                   <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+
+                    {% if is_granted('ROLE_ADMIN') or (is_granted('ROLE_AUTHOR') and app.user == article.author) %}
+                        <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

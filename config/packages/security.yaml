@@ -25,7 +25,7 @@ security:
                 target: blog_index
     role_hierarchy:
         ROLE_AUTHOR: ROLE_USER
-        ROLE_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN: ROLE_AUTHOR
 
 
                     # where to redirect after logout
@@ -43,5 +43,4 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
       - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       # - { path: ^/admin, roles: ROLE_ADMIN }
-       # - { path: ^/profile, roles: ROLE_USER }
+

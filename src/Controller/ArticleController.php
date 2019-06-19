@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Slugify;
 
 /**
+ * @IsGranted("ROLE_AUTHOR")
  * @Route("/article")
  */
 class ArticleController extends AbstractController
@@ -75,13 +77,19 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * @IsGranted("edit", subject="article")
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Article $article): Response
     {
+        /*if ($this->getUser() != $article->getAuthor()) {
+            return $this->redirectToRoute('article_index');
+        }*/
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
-				$slugify= new Slugify();
+        $slugify= new Slugify();
+
         if ($form->isSubmitted() && $form->isValid()) {
 	        $article->setSlug($slugify->generate($article->getTitle()));
             $this->getDoctrine()->getManager()->flush();
